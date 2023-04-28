@@ -1,0 +1,5 @@
+  File "/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/bridge.py", line 82
+    carla_bridge.initialize_bridge()
+    ^
+SyntaxError: invalid syntax
+
