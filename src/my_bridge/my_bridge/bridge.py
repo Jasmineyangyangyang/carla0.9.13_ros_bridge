@@ -8,9 +8,8 @@ from rclpy.node import Node
 import carla
 import numpy as np
 import math
-import time
-import cv2
 from cv_bridge import CvBridge
+import sys
 
 import queue
 import threading
@@ -18,7 +17,12 @@ import threading
 from transforms3d.euler import quat2euler
 from geometry_msgs.msg import Pose 
 from sensor_msgs.msg import Image
+from sensor_msgs.msg import PointCloud2, PointField
+from std_msgs.msg import Header
 
+# for lidar point cloud
+import struct
+import ctypes
 
 CARLA_FPS = 60.0
 CARLA_SCENE_NAME = "Bend03"
@@ -63,6 +67,17 @@ RIGHT_CAMERA_PITCH = 20.0
 RIGHT_CAMERA_YAW = 150.0
 RIGHT_CAMERA_IMAGE_SIZE_X = str(640)
 RIGHT_CAMERA_IMAGE_SIZE_Y = str(400)
+
+_DATATYPES = {}
+_DATATYPES[PointField.INT8] = ('b', 1)
+_DATATYPES[PointField.UINT8] = ('B', 1)
+_DATATYPES[PointField.INT16] = ('h', 2)
+_DATATYPES[PointField.UINT16] = ('H', 2)
+_DATATYPES[PointField.INT32] = ('i', 4)
+_DATATYPES[PointField.UINT32] = ('I', 4)
+_DATATYPES[PointField.FLOAT32] = ('f', 4)
+_DATATYPES[PointField.FLOAT64] = ('d', 8)
+
 
 class CarlaRosBridge(Node):
     """
@@ -170,7 +185,7 @@ class CarlaRosBridge(Node):
         right_camera_bp.set_attribute('image_size_x', RIGHT_CAMERA_IMAGE_SIZE_X)
         right_camera_bp.set_attribute('image_size_y', RIGHT_CAMERA_IMAGE_SIZE_Y)
         right_camera = self.carla_world.spawn_actor(right_camera_bp, right_camera_transform, attach_to=self.ego_vehicle)
-        right_camera.listen(self.right_camera_callback)
+        right_camera.listen(lambda image: self.right_camera_callback(image))
         self.sensor_list.append(right_camera)
 
         # add one camera and one Lidar for perception module
@@ -178,7 +193,7 @@ class CarlaRosBridge(Node):
         perception_camera_bp = self.blueprint_library.find('sensor.camera.rgb')
         perception_camera_transform = carla.Transform(carla.Location(x=1.5, z=2.4))
         perception_camera = self.carla_world.spawn_actor(perception_camera_bp, perception_camera_transform, attach_to=self.ego_vehicle)
-        perception_camera.listen(self.perception_camera_callback)
+        perception_camera.listen(lambda image: self.perception_camera_callback(image))
         self.sensor_list.append(perception_camera)
 
         lidar_bp = self.blueprint_library.find('sensor.lidar.ray_cast')
@@ -194,12 +209,17 @@ class CarlaRosBridge(Node):
 
         # spawn the lidar
         lidar = self.carla_world.spawn_actor(lidar_bp, lidar_transform, attach_to=self.ego_vehicle)
-        lidar.listen(self.lidar_callback)
+        lidar.listen(lambda point_cloud: self.lidar_callback(point_cloud))
         self.sensor_list.append(lidar)
 
+        # update world to spawn lidar
+        self.carla_world.tick() 
 
         # create publishers
-        self.perception_camera_publisher = self.create_publisher(Image, "/carla/ego_vehicle/perception_camera/image", 1)
+        self.left_camera_publisher = self.create_publisher(Image, "/carla/ego_vehicle/left_camera/image", 10)
+        self.right_camera_publisher = self.create_publisher(Image, "/carla/ego_vehicle/right_camera/image", 10)
+        self.perception_camera_publisher = self.create_publisher(Image, "/carla/ego_vehicle/perception_camera/image", 10)
+        self.perception_lidar_publisher = self.create_publisher(PointCloud2, "/carla/ego_vehicle/perception_lidar/point_cloud", 10)
 
 
         # create subscription
@@ -252,43 +272,121 @@ class CarlaRosBridge(Node):
     
     def left_camera_callback(self, carla_image):
         """
-        会在carla服务器刷新时自动调用，所以发送频率应该等于方振频率；
-        No image, I don't know reason
+        会在carla服务器刷新时自动调用,所以发送频率应该等于方振频率;
         """
-        ros_image = Image()
+        carla_image_data_array = np.ndarray(
+            shape=(carla_image.height, carla_image.width, 4),
+            dtype=np.uint8, buffer=carla_image.raw_data)
+        
+        ros_image = self.bridge.cv2_to_imgmsg(carla_image_data_array, "bgra8")
         ros_image.header.stamp = self.get_clock().now().to_msg()
         ros_image.header.frame_id = 'leftcamera'
-        ros_image.height = carla_image.height
-        ros_image.width = carla_image.width
-        ros_image.encoding = "rgb8"
-        ros_image.is_bigendian = False
-        ros_image.step = carla_image.width * 3  # 每行数据占
-        
-        # Convert the image from carla rgb to OpenCv format
-        # cvimage = carla_image.convert(carla.ColorConverter.Raw)
+        self.left_camera_publisher.publish(ros_image)
 
-        # Convert the image from carla rgb to ROS2 Image format
+
+    def right_camera_callback(self, carla_image):
+        """
+        会在carla服务器刷新时自动调用,所以发送频率应该等于方振频率;
+        """
+        carla_image_data_array = np.ndarray(
+            shape=(carla_image.height, carla_image.width, 4),
+            dtype=np.uint8, buffer=carla_image.raw_data)
         
-        print(carla_image)
-        cvimage = carla_image.convert(carla.ColorConverter.Raw)
-        print("--------------------------")
-        print(carla_image)
-        print('---------------')
-        print(cvimage)
-        ros_image.data = self.bridge.cv2_to_imgmsg(np.array(cvimage), "rgb8")
+        ros_image = self.bridge.cv2_to_imgmsg(carla_image_data_array, "bgra8")
+        ros_image.header.stamp = self.get_clock().now().to_msg()
+        ros_image.header.frame_id = 'rightcamera'
+        self.right_camera_publisher.publish(ros_image)
+
+    def perception_camera_callback(self, carla_image):
+        """
+        会在carla服务器刷新时自动调用,所以发送频率应该等于方振频率;
+        """
+        carla_image_data_array = np.ndarray(
+            shape=(carla_image.height, carla_image.width, 4),
+            dtype=np.uint8, buffer=carla_image.raw_data)
+        
+        ros_image = self.bridge.cv2_to_imgmsg(carla_image_data_array, "bgra8")
+        ros_image.header.stamp = self.get_clock().now().to_msg()
+        ros_image.header.frame_id = 'perceptioncamera'
         self.perception_camera_publisher.publish(ros_image)
-        pass
 
+    def lidar_callback(self, carla_point_cloud):
 
-    def right_camera_callback(self, image):
-        pass
+        fields = [
+            PointField(name='x', offset=0, datatype=PointField.FLOAT32, count=1),
+            PointField(name='y', offset=4, datatype=PointField.FLOAT32, count=1),
+            PointField(name='z', offset=8, datatype=PointField.FLOAT32, count=1),
+            PointField(name='intensity', offset=12, datatype=PointField.FLOAT32, count=1)
+        ]
 
-    def perception_camera_callback(self, image):
-        pass
+        lidar_data = np.fromstring(
+            bytes(carla_point_cloud.raw_data), dtype=np.float32)
+        lidar_data = np.reshape(
+            lidar_data, (int(lidar_data.shape[0] / 4), 4))
+        
+        # we take the opposite of y axis
+        # (as lidar point are express in left handed coordinate system, and ros need right handed)
+        lidar_data[:, 1] *= -1
 
-    def lidar_callback(self, ply):
-        pass
+        header =Header()
+        header.stamp = self.get_clock().now().to_msg()
+        header.frame_id = 'perceptionlidar'
+        point_cloud_msg = self.create_cloud(header, fields, lidar_data)
+        self.perception_lidar_publisher.publish(point_cloud_msg)
 
+    # http://docs.ros.org/indigo/api/sensor_msgs/html/point__cloud2_8py_source.html
+    def _get_struct_fmt(self, is_bigendian, fields, field_names=None):
+        fmt = '>' if is_bigendian else '<'
+
+        offset = 0
+        for field in (f for f in sorted(fields, key=lambda f: f.offset)
+                    if field_names is None or f.name in field_names):
+            if offset < field.offset:
+                fmt += 'x' * (field.offset - offset)
+                offset = field.offset
+            if field.datatype not in _DATATYPES:
+                print('Skipping unknown PointField datatype [{}]' % field.datatype, file=sys.stderr)
+            else:
+                datatype_fmt, datatype_length = _DATATYPES[field.datatype]
+                fmt += field.count * datatype_fmt
+                offset += field.count * datatype_length
+
+        return fmt
+    def create_cloud(self, header, fields, points):
+        """
+        Create a L{sensor_msgs.msg.PointCloud2} message.
+        @param header: The point cloud header.
+        @type  header: L{std_msgs.msg.Header}
+        @param fields: The point cloud fields.
+        @type  fields: iterable of L{sensor_msgs.msg.PointField}
+        @param points: The point cloud points.
+        @type  points: list of iterables, i.e. one iterable for each point, with the
+                    elements of each iterable being the values of the fields for
+                    that point (in the same order as the fields parameter)
+        @return: The point cloud.
+        @rtype:  L{sensor_msgs.msg.PointCloud2}
+        """
+
+        cloud_struct = struct.Struct(self._get_struct_fmt(False, fields))
+
+        buff = ctypes.create_string_buffer(cloud_struct.size * len(points))
+
+        point_step, pack_into = cloud_struct.size, cloud_struct.pack_into
+        offset = 0
+        for p in points:
+            pack_into(buff, offset, *p)
+            offset += point_step
+
+        return PointCloud2(header=header,
+                        height=1,
+                        width=len(points),
+                        is_dense=False,
+                        is_bigendian=False,
+                        fields=fields,
+                        point_step=cloud_struct.size,
+                        row_step=cloud_struct.size * len(points),
+                        data=buff.raw)
+    
     def __del__(self):
         self.tick_thread.join() # make sure the node will shutdown after this thread done
 
