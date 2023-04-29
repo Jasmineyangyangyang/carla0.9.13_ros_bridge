@@ -245,7 +245,6 @@ class CarlaRosBridge(Node):
             '/carla/{}/waypoints'.format(self.role_name),
             QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL))
 
-
         # create subscription
         self.ego_transform_subscription = self.create_subscription(Pose, "carla/ego_vehicle/control/set_transform", \
                                                                    self.ego_transform_callback, 10)
