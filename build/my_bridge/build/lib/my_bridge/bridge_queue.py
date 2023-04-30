@@ -10,7 +10,6 @@ import numpy as np
 import math
 from cv_bridge import CvBridge
 import sys
-import time
 
 import queue
 import threading
@@ -250,7 +249,7 @@ class CarlaRosBridge(Node):
         # create subscription
         self.ego_transform_subscription = self.create_subscription(Pose, "carla/ego_vehicle/control/set_transform", \
                                                                    self.ego_transform_callback, 10)
-        self.ego_transform_queue = queue.Queue(maxsize=1)
+        self.ego_transform_queue = queue.Queue(maxsize=600)
 
         # create a thread for server updating
         self.ego_vehicle_location = None
@@ -374,7 +373,7 @@ class CarlaRosBridge(Node):
                     yaw_rad), y=CARLA_SPECTATOR_DX*math.sin(yaw_rad)+CARLA_SPECTATOR_DY*math.cos(yaw_rad), z=CARLA_SPECTATOR_DZ)
                 self.spectator.set_transform(spectator_transform)
                 # (I test that this is no need: 2023/04/27)wait for the carla server and tick
-                time.sleep(self.fixed_delta_seconds)
+                # time.sleep(self.fixed_delta_seconds)
                 self.carla_world.tick()
 
         except queue.Empty:
