@@ -23,7 +23,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-        'bridge = my_bridge.bridge:main',
+        'bridge_wayserver = my_bridge.bridge_wayserver:main',
+        'bridge_waypublisher = my_bridge.bridge_waypublisher:main',
         ],
     },
 )

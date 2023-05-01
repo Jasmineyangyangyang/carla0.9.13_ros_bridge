@@ -1,0 +1,38 @@
+[0.989s] Invoking command in '/home/cec20/Yangjiaxin/my-carla-ros-bridge/src/imagenode': PYTHONPATH=/home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/prefix_override:/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/imagenode build --build-base /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/build install --record /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/install.log --install-scripts $base/lib/imagenode --single-version-externally-managed
+[1.162s] running egg_info
+[1.162s] creating ../../build/imagenode/imagenode.egg-info
+[1.162s] writing ../../build/imagenode/imagenode.egg-info/PKG-INFO
+[1.163s] writing dependency_links to ../../build/imagenode/imagenode.egg-info/dependency_links.txt
+[1.163s] writing entry points to ../../build/imagenode/imagenode.egg-info/entry_points.txt
+[1.163s] writing requirements to ../../build/imagenode/imagenode.egg-info/requires.txt
+[1.163s] writing top-level names to ../../build/imagenode/imagenode.egg-info/top_level.txt
+[1.163s] writing manifest file '../../build/imagenode/imagenode.egg-info/SOURCES.txt'
+[1.186s] reading manifest file '../../build/imagenode/imagenode.egg-info/SOURCES.txt'
+[1.186s] writing manifest file '../../build/imagenode/imagenode.egg-info/SOURCES.txt'
+[1.187s] running build
+[1.187s] running build_py
+[1.187s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/build
+[1.187s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/build/lib
+[1.187s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/build/lib/imagenode
+[1.187s] copying imagenode/rearview.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/build/lib/imagenode
+[1.187s] copying imagenode/__init__.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/build/lib/imagenode
+[1.187s] running install
+[1.187s] running install_lib
+[1.188s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/lib/python3.8/site-packages/imagenode
+[1.188s] copying /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/build/lib/imagenode/rearview.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/lib/python3.8/site-packages/imagenode
+[1.188s] copying /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/build/lib/imagenode/__init__.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/lib/python3.8/site-packages/imagenode
+[1.189s] byte-compiling /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/lib/python3.8/site-packages/imagenode/rearview.py to rearview.cpython-38.pyc
+[1.189s] byte-compiling /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/lib/python3.8/site-packages/imagenode/__init__.py to __init__.cpython-38.pyc
+[1.189s] running install_data
+[1.190s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/share/ament_index
+[1.190s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/share/ament_index/resource_index
+[1.190s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/share/ament_index/resource_index/packages
+[1.190s] copying resource/imagenode -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/share/ament_index/resource_index/packages
+[1.190s] copying package.xml -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/share/imagenode
+[1.190s] copying launch/imagenode.launch.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/share/imagenode
+[1.190s] running install_egg_info
+[1.191s] Copying ../../build/imagenode/imagenode.egg-info to /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/lib/python3.8/site-packages/imagenode-0.0.0-py3.8.egg-info
+[1.192s] running install_scripts
+[1.203s] Installing cameranode1 script to /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/lib/imagenode
+[1.204s] writing list of installed files to '/home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/install.log'
+[1.221s] Invoked command in '/home/cec20/Yangjiaxin/my-carla-ros-bridge/src/imagenode' returned '0': PYTHONPATH=/home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/prefix_override:/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/imagenode/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/imagenode build --build-base /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/build install --record /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/imagenode/install.log --install-scripts $base/lib/imagenode --single-version-externally-managed

@@ -1,6 +1,7 @@
 import launch
 import launch_ros.actions
-
+import os
+from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     ld = launch.LaunchDescription([
@@ -41,7 +42,7 @@ def generate_launch_description():
         ),
         launch_ros.actions.Node(
             package='my_bridge',
-            executable='bridge',
+            executable='bridge_wayserver',
             name='carla_ros_bridge',       # 对节点重新命名
             output='screen',
             emulate_tty='True',
@@ -69,7 +70,13 @@ def generate_launch_description():
                     'ego_vehicle_role_name': launch.substitutions.LaunchConfiguration('ego_vehicle_role_name')
                 }
             ]
-        )
+        ),
+        launch.actions.IncludeLaunchDescription(
+            launch.launch_description_sources.PythonLaunchDescriptionSource(
+                os.path.join(get_package_share_directory(
+                    'imagenode'), 'imagenode.launch.py')
+            ),
+        ),       
     ])
     return ld
 

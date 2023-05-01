@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from waypoints_types/srv/GetWaypointsList.srv
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/PoseStamped.idl"
+#include "std_msgs/msg/String.idl"
+
+module waypoints_types {
+  module srv {
+    @verbatim (language="comment", text=
+      " Copyright (c) 2023 Intel Corporation." "\n"
+      "" "\n"
+      " This work is licensed under the terms of the MIT license." "\n"
+      " For a copy, see <https://opensource.org/licenses/MIT>.")
+    struct GetWaypointsList_Request {
+      std_msgs::msg::String vehiclename;
+    };
+    struct GetWaypointsList_Response {
+      geometry_msgs::msg::PoseStamped vehiclepose;
+    };
+  };
+};

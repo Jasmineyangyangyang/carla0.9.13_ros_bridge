@@ -1,3 +1,4 @@
 [console_scripts]
-bridge = my_bridge.bridge:main
+bridge_waypublisher = my_bridge.bridge_waypublisher:main
+bridge_wayserver = my_bridge.bridge_wayserver:main
 

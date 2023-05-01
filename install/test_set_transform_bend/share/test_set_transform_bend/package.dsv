@@ -1,0 +1,6 @@
+source;share/test_set_transform_bend/hook/pythonpath.ps1
+source;share/test_set_transform_bend/hook/pythonpath.dsv
+source;share/test_set_transform_bend/hook/pythonpath.sh
+source;share/test_set_transform_bend/hook/ament_prefix_path.ps1
+source;share/test_set_transform_bend/hook/ament_prefix_path.dsv
+source;share/test_set_transform_bend/hook/ament_prefix_path.sh

@@ -1,0 +1,37 @@
+[0.765s] Invoking command in '/home/cec20/Yangjiaxin/my-carla-ros-bridge/src/traject_plan_control': PYTHONPATH=/home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/prefix_override:/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/traject_plan_control build --build-base /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/build install --record /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/install.log --install-scripts $base/lib/traject_plan_control --single-version-externally-managed
+[0.942s] running egg_info
+[0.942s] creating ../../build/traject_plan_control/traject_plan_control.egg-info
+[0.942s] writing ../../build/traject_plan_control/traject_plan_control.egg-info/PKG-INFO
+[0.942s] writing dependency_links to ../../build/traject_plan_control/traject_plan_control.egg-info/dependency_links.txt
+[0.942s] writing entry points to ../../build/traject_plan_control/traject_plan_control.egg-info/entry_points.txt
+[0.942s] writing requirements to ../../build/traject_plan_control/traject_plan_control.egg-info/requires.txt
+[0.942s] writing top-level names to ../../build/traject_plan_control/traject_plan_control.egg-info/top_level.txt
+[0.943s] writing manifest file '../../build/traject_plan_control/traject_plan_control.egg-info/SOURCES.txt'
+[0.966s] reading manifest file '../../build/traject_plan_control/traject_plan_control.egg-info/SOURCES.txt'
+[0.966s] writing manifest file '../../build/traject_plan_control/traject_plan_control.egg-info/SOURCES.txt'
+[0.966s] running build
+[0.966s] running build_py
+[0.966s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/build
+[0.967s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/build/lib
+[0.967s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/build/lib/traject_plan_control
+[0.967s] copying traject_plan_control/__init__.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/build/lib/traject_plan_control
+[0.967s] copying traject_plan_control/waypoints_client.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/build/lib/traject_plan_control
+[0.967s] running install
+[0.967s] running install_lib
+[0.968s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/lib/python3.8/site-packages/traject_plan_control
+[0.968s] copying /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/build/lib/traject_plan_control/__init__.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/lib/python3.8/site-packages/traject_plan_control
+[0.968s] copying /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/build/lib/traject_plan_control/waypoints_client.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/lib/python3.8/site-packages/traject_plan_control
+[0.968s] byte-compiling /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/lib/python3.8/site-packages/traject_plan_control/__init__.py to __init__.cpython-38.pyc
+[0.969s] byte-compiling /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/lib/python3.8/site-packages/traject_plan_control/waypoints_client.py to waypoints_client.cpython-38.pyc
+[0.969s] running install_data
+[0.970s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/share/ament_index
+[0.970s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/share/ament_index/resource_index
+[0.970s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/share/ament_index/resource_index/packages
+[0.970s] copying resource/traject_plan_control -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/share/ament_index/resource_index/packages
+[0.970s] copying package.xml -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/share/traject_plan_control
+[0.970s] running install_egg_info
+[0.971s] Copying ../../build/traject_plan_control/traject_plan_control.egg-info to /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/lib/python3.8/site-packages/traject_plan_control-0.0.0-py3.8.egg-info
+[0.972s] running install_scripts
+[0.983s] Installing traject_plan_control script to /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/lib/traject_plan_control
+[0.984s] writing list of installed files to '/home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/install.log'
+[1.008s] Invoked command in '/home/cec20/Yangjiaxin/my-carla-ros-bridge/src/traject_plan_control' returned '0': PYTHONPATH=/home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/prefix_override:/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/traject_plan_control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/traject_plan_control build --build-base /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/build install --record /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/traject_plan_control/install.log --install-scripts $base/lib/traject_plan_control --single-version-externally-managed

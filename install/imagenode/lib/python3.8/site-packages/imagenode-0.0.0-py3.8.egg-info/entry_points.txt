@@ -1,0 +1,3 @@
+[console_scripts]
+cameranode1 = imagenode.rearview:main
+

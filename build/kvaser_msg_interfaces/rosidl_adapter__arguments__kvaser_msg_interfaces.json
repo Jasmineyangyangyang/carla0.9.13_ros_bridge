@@ -1,0 +1,6 @@
+{
+  "package_name": "kvaser_msg_interfaces",
+  "non_idl_tuples": [
+    "/home/cec20/Yangjiaxin/my-carla-ros-bridge/src/kvaser_msg_interfaces:msg/ControlCmd.msg"
+  ]
+}

@@ -1,0 +1,6 @@
+source;share/traject_plan_control/hook/pythonpath.ps1
+source;share/traject_plan_control/hook/pythonpath.dsv
+source;share/traject_plan_control/hook/pythonpath.sh
+source;share/traject_plan_control/hook/ament_prefix_path.ps1
+source;share/traject_plan_control/hook/ament_prefix_path.dsv
+source;share/traject_plan_control/hook/ament_prefix_path.sh

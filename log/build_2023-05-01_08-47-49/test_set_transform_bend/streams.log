@@ -1,0 +1,37 @@
+[1.165s] Invoking command in '/home/cec20/Yangjiaxin/my-carla-ros-bridge/src/test_set_transform_bend': PYTHONPATH=/home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/prefix_override:/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/test_set_transform_bend build --build-base /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/build install --record /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/install.log --install-scripts $base/lib/test_set_transform_bend --single-version-externally-managed
+[1.339s] running egg_info
+[1.339s] creating ../../build/test_set_transform_bend/test_set_transform_bend.egg-info
+[1.340s] writing ../../build/test_set_transform_bend/test_set_transform_bend.egg-info/PKG-INFO
+[1.340s] writing dependency_links to ../../build/test_set_transform_bend/test_set_transform_bend.egg-info/dependency_links.txt
+[1.340s] writing entry points to ../../build/test_set_transform_bend/test_set_transform_bend.egg-info/entry_points.txt
+[1.340s] writing requirements to ../../build/test_set_transform_bend/test_set_transform_bend.egg-info/requires.txt
+[1.340s] writing top-level names to ../../build/test_set_transform_bend/test_set_transform_bend.egg-info/top_level.txt
+[1.341s] writing manifest file '../../build/test_set_transform_bend/test_set_transform_bend.egg-info/SOURCES.txt'
+[1.364s] reading manifest file '../../build/test_set_transform_bend/test_set_transform_bend.egg-info/SOURCES.txt'
+[1.364s] writing manifest file '../../build/test_set_transform_bend/test_set_transform_bend.egg-info/SOURCES.txt'
+[1.364s] running build
+[1.364s] running build_py
+[1.364s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/build
+[1.364s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/build/lib
+[1.364s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/build/lib/test_set_transform_bend
+[1.364s] copying test_set_transform_bend/set_bend_transform.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/build/lib/test_set_transform_bend
+[1.365s] copying test_set_transform_bend/__init__.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/build/lib/test_set_transform_bend
+[1.365s] running install
+[1.365s] running install_lib
+[1.366s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/lib/python3.8/site-packages/test_set_transform_bend
+[1.366s] copying /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/build/lib/test_set_transform_bend/set_bend_transform.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/lib/python3.8/site-packages/test_set_transform_bend
+[1.366s] copying /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/build/lib/test_set_transform_bend/__init__.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/lib/python3.8/site-packages/test_set_transform_bend
+[1.366s] byte-compiling /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/lib/python3.8/site-packages/test_set_transform_bend/set_bend_transform.py to set_bend_transform.cpython-38.pyc
+[1.367s] byte-compiling /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/lib/python3.8/site-packages/test_set_transform_bend/__init__.py to __init__.cpython-38.pyc
+[1.367s] running install_data
+[1.368s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/share/ament_index
+[1.368s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/share/ament_index/resource_index
+[1.368s] creating /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/share/ament_index/resource_index/packages
+[1.368s] copying resource/test_set_transform_bend -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/share/ament_index/resource_index/packages
+[1.368s] copying package.xml -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/share/test_set_transform_bend
+[1.368s] running install_egg_info
+[1.370s] Copying ../../build/test_set_transform_bend/test_set_transform_bend.egg-info to /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/lib/python3.8/site-packages/test_set_transform_bend-0.0.0-py3.8.egg-info
+[1.370s] running install_scripts
+[1.382s] Installing set_bend_transform script to /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/lib/test_set_transform_bend
+[1.382s] writing list of installed files to '/home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/install.log'
+[1.403s] Invoked command in '/home/cec20/Yangjiaxin/my-carla-ros-bridge/src/test_set_transform_bend' returned '0': PYTHONPATH=/home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/prefix_override:/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/test_set_transform_bend/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/test_set_transform_bend build --build-base /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/build install --record /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/test_set_transform_bend/install.log --install-scripts $base/lib/test_set_transform_bend --single-version-externally-managed

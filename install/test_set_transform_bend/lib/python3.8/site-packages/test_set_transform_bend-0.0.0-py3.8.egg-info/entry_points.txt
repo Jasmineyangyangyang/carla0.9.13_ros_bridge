@@ -1,0 +1,3 @@
+[console_scripts]
+set_bend_transform = test_set_transform_bend.set_bend_transform:main
+

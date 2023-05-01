@@ -1,8 +1,12 @@
-/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/bridge_queue.py
-/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/bridge.py
+/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/bridge_wayserver.py
+/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/bridge_wayserver copy.py
+/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/bridge_waypublisher.py
+/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/bridge_wayserver_threecamera.py
 /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/__init__.py
-/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/__pycache__/bridge_queue.cpython-38.pyc
-/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/__pycache__/bridge.cpython-38.pyc
+/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/__pycache__/bridge_wayserver.cpython-38.pyc
+/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/__pycache__/bridge_wayserver copy.cpython-38.pyc
+/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/__pycache__/bridge_waypublisher.cpython-38.pyc
+/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/__pycache__/bridge_wayserver_threecamera.cpython-38.pyc
 /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/__pycache__/__init__.cpython-38.pyc
 /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/share/ament_index/resource_index/packages/my_bridge
 /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/share/my_bridge/package.xml
@@ -14,4 +18,5 @@
 /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge-0.0.0-py3.8.egg-info/dependency_links.txt
 /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge-0.0.0-py3.8.egg-info/entry_points.txt
 /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge-0.0.0-py3.8.egg-info/PKG-INFO
-/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/my_bridge/bridge
+/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/my_bridge/bridge_waypublisher
+/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/my_bridge/bridge_wayserver

@@ -1,0 +1,6 @@
+{
+  "package_name": "waypoints_types",
+  "non_idl_tuples": [
+    "/home/cec20/Yangjiaxin/my-carla-ros-bridge/src/waypoints_types:srv/GetWaypointsList.srv"
+  ]
+}
