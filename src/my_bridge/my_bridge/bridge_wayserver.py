@@ -44,7 +44,6 @@ CARLA_EGO_INIT_YAW = -12.729858/180.*math.pi
 CARLA_SPECTATOR_DX = 0.10
 CARLA_SPECTATOR_DY = -0.35
 CARLA_SPECTATOR_DZ = 1.2
-EGO_VEHICLE_IN_LEFTLANE = 1    # 记录是否在左侧车道，1表示在左侧车道；0表示在右侧车道
 
 CARLA_ADJACENT0_MODEL_FILTER = "model3"
 CARLA_ADJACENT0_STATE_TOPIC_NAME = "adjacent0"
@@ -92,10 +91,6 @@ _DATATYPES[PointField.UINT32] = ('I', 4)
 _DATATYPES[PointField.FLOAT32] = ('f', 4)
 _DATATYPES[PointField.FLOAT64] = ('d', 8)
 
-# for carla_waypoint publish
-WAYPOINT_DISTANCE = 0.2
-WAYPOINTDISTANCE = 150
-WAYPOINTRESOLUTION = 0.1
 
 
 class CarlaRosBridge(Node):
@@ -161,13 +156,6 @@ class CarlaRosBridge(Node):
             self.ego_vehicle_bp, self.ego_spawn_point)
         self.ego_vehicle.set_simulate_physics(False)
         self.actor_list.append(self.ego_vehicle)
-
-        # get the lane waypoint according to ego_vehicle
-        lane_waypoints = self.map.generate_waypoints(WAYPOINTRESOLUTION)
-        if EGO_VEHICLE_IN_LEFTLANE:
-            self.all_waypoints = [wp.get_left_lane() for wp in lane_waypoints]
-        else:
-            self.all_waypoints= [wp.get_right_lane() for wp in lane_waypoints]
 
         # spawn the adjacent0 vehicle actor
         self.adjacent0_vehicle_bp = self.blueprint_library.filter(
@@ -246,11 +234,7 @@ class CarlaRosBridge(Node):
         self.right_camera_publisher = self.create_publisher(Image, "/carla/ego_vehicle/right_camera/image", 10)
         self.perception_camera_publisher = self.create_publisher(Image, "/carla/ego_vehicle/perception_camera/image", 10)
         self.perception_lidar_publisher = self.create_publisher(PointCloud2, "/carla/ego_vehicle/perception_lidar/point_cloud", 10)
-        # self.waypoint_publisher = self.create_publisher(
-        #     Path,
-        #     '/carla/{}/waypoints'.format(self.role_name),
-        #     QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL))
-        self.ego_pose_service = self.create_service(GetWaypointsList, "/carla/vehicle/posestamped", self.find_ego_waypoint)
+        self.ego_pose_service = self.create_service(GetWaypointsList, "/carla/vehicle/posestamped", self.find_vehicle_pose)
 
         # create subscription
         self.ego_transform_subscription = self.create_subscription(Pose, "carla/ego_vehicle/control/set_transform", \
@@ -258,15 +242,16 @@ class CarlaRosBridge(Node):
         self.ego_transform_queue = queue.Queue(maxsize=1)
 
         # create a thread for server updating
-        self.ego_vehicle_location = None
         self.on_tick = None
         # self.on_tick = self.carla_world.on_tick(self.find_ego_waypoint) 
         self.spectator = self.carla_world.get_spectator()
         self.tick_thread = threading.Thread(target=self.world_update)
         # self.tick_thread.daemon = True
         self.tick_thread.start()
+    
 
     def ego_transform_callback(self, pose):
+        ego_transform = None
         x = pose.position.x
         y = -1*pose.position.y
         z = pose.position.z
@@ -281,27 +266,10 @@ class CarlaRosBridge(Node):
                                         carla.Rotation(pitch=math.degrees(euler[1]), \
                                                     yaw=math.degrees(-1*euler[2]), roll=math.degrees(euler[0])))
         self.ego_transform_queue.put(ego_transform)
-        
         # self.get_logger().info(f" get x={x}m, y={y}m, z={z}m.")
 
-    
-    # def find_ego_waypoint(self, _):   # 用on_tick注册进服务器时会默认增加一个参数，所以需要一个占位符
-        # """
-        # It uses the current pose of the ego vehicle as starting point. 
-        # If the vehicle is respawned or move, the route is newly calculated.
-        # The calculated route is published on '/carla/<ROLE NAME>/waypoints'
-        # """
-
-        # current_location = self.ego_vehicle.get_location()
-        # if self.ego_vehicle_location:
-        #     dx = self.ego_vehicle_location.x - current_location.x
-        #     dy = self.ego_vehicle_location.y - current_location.y
-        #     distance = math.sqrt(dx * dx + dy * dy)
-        #     if distance > WAYPOINT_DISTANCE:
-        #         self.get_logger().info("Ego vehicle was repositioned.")
-        #         self.reroute()
-        # self.ego_vehicle_location = current_location       
-    def find_ego_waypoint(self, request, response): 
+     
+    def find_vehicle_pose(self, request, response): 
         if request.vehiclename.data == "ego_vehicle":
             current_transform = self.ego_vehicle.get_transform()
         elif request.vehiclename.data == "adjacent0_vehicle":
@@ -314,73 +282,6 @@ class CarlaRosBridge(Node):
 
         response.vehiclepose = pose_stamped
         return response
-
-    def reroute(self):
-        """
-        Triggers a rerouting
-        """
-        if self.ego_vehicle is None:
-            self.current_route = None
-        else:
-            self.current_route = self.calculate_route_distance()
-        self.publish_waypoints()
-    def publish_waypoints(self):
-        """
-        Publish the ROS message containing the waypoints
-        """
-        msg = Path()
-        msg.header.frame_id = "map"
-        msg.header.stamp = self.get_clock().now().to_msg()
-        if self.current_route is not None:
-            for wp in self.current_route:
-                pose = PoseStamped()
-                pose.pose = trans.carla_transform_to_ros_pose(wp[0].transform)
-                pose.header.frame_id = msg.header.frame_id 
-                pose.header.stamp = msg.header.stamp
-                msg.poses.append(pose)
-                self.carla_world.debug.draw_point(wp[0].transform.location, size=0.1, color=carla.Color(255,0,0), life_time=0)
-                # self.world.debug.draw_arrow(wp[0].transform.location, wp[0].transform.location + carla.Location(x=math.cos(math.radians(wp[0].transform.rotation.yaw)),\
-                #                                                     y=math.sin(math.radians(wp[0].transform.rotation.yaw))), \
-                #                                                         thickness=0.05, arrow_size=0.1, \
-                #                                                             color=carla.Color(255,255,255), life_time=0)
-
-        self.waypoint_publisher.publish(msg)
-        self.get_logger().info("Published {} waypoints.".format(len(msg.poses)))
-
-    def calculate_route_distance(self):
-        """
-        Calculate a route from the current location go WAYPOINTDISTANCE
-        """
-        self.get_logger().info(f"Calculating route to {WAYPOINTDISTANCE} m")
-
-        grp = GlobalRoutePlanner(self.carla_world.get_map(), sampling_resolution=0.5)
-        
-        # self.ego_vehicle_location = self.ego_vehicle.get_location()
-        print(self.ego_vehicle_location)
-        # goal = self.ego_vehicle.get_transform()
-        goal = None
-        for waypoint_ in self.all_waypoints:
-            # get Location
-            location = waypoint_.transform.location
-            # rotation = waypoint_.transform.rotation
-            if self.ego_vehicle_location:
-                dx = self.ego_vehicle_location.x - location.x
-                dy = self.ego_vehicle_location.y - location.y
-                distance = math.sqrt(dx * dx + dy * dy)
-                if distance > WAYPOINTDISTANCE:
-                    self.get_logger().info("calculate route.")
-                    goal = waypoint_.transform
-                    break
-        if goal is not None:
-            route = grp.trace_route(self.ego_vehicle.get_location(),
-                                    carla.Location(goal.location.x,
-                                                goal.location.y,
-                                                goal.location.z))
-        else:
-            print("goal is None")
-            route = None
-
-        return route
     
     def world_update(self):
         try:
