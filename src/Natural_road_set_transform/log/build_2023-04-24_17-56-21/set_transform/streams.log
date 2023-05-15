@@ -1,0 +1,26 @@
+[0.847s] Invoking command in '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform': PYTHONPATH=/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/prefix_override:/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/set_transform build --build-base /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/build install --record /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/install.log --install-scripts $base/lib/set_transform --single-version-externally-managed
+[0.998s] running egg_info
+[0.998s] writing build/set_transform/set_transform.egg-info/PKG-INFO
+[0.998s] writing dependency_links to build/set_transform/set_transform.egg-info/dependency_links.txt
+[0.998s] writing entry points to build/set_transform/set_transform.egg-info/entry_points.txt
+[0.998s] writing requirements to build/set_transform/set_transform.egg-info/requires.txt
+[0.998s] writing top-level names to build/set_transform/set_transform.egg-info/top_level.txt
+[1.020s] reading manifest file 'build/set_transform/set_transform.egg-info/SOURCES.txt'
+[1.079s] writing manifest file 'build/set_transform/set_transform.egg-info/SOURCES.txt'
+[1.079s] running build
+[1.079s] running build_py
+[1.080s] copying set_transform/test1.py -> /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/build/lib/set_transform
+[1.461s] running install
+[1.463s] running install_lib
+[1.465s] copying /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/build/lib/set_transform/test1.py -> /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib/python3.8/site-packages/set_transform
+[1.466s] byte-compiling /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib/python3.8/site-packages/set_transform/test1.py to test1.cpython-38.pyc
+[1.469s] running install_data
+[1.470s] running install_egg_info
+[1.473s] removing '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib/python3.8/site-packages/set_transform-0.0.0-py3.8.egg-info' (and everything under it)
+[1.474s] Copying build/set_transform/set_transform.egg-info to /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib/python3.8/site-packages/set_transform-0.0.0-py3.8.egg-info
+[1.595s] running install_scripts
+[1.619s] Installing test script to /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib/set_transform
+[1.620s] Installing transform_autoset script to /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib/set_transform
+[1.620s] Installing transform_manualset script to /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib/set_transform
+[1.620s] writing list of installed files to '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/install.log'
+[1.632s] Invoked command in '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform' returned '0': PYTHONPATH=/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/prefix_override:/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/set_transform build --build-base /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/build install --record /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/install.log --install-scripts $base/lib/set_transform --single-version-externally-managed

@@ -11,6 +11,7 @@ setup.py
 kvaser_parser_ros/__init__.py
 kvaser_parser_ros/kvaser_ros.py
 kvaser_parser_ros/read_from_kvaser.py
+kvaser_parser_ros/read_from_kvaser_adjacent.py
 kvaser_parser_ros/read_from_kvaser_queue.py
 kvaser_parser_ros/write_to_kvaser copy.py
 kvaser_parser_ros/write_to_kvaser.py

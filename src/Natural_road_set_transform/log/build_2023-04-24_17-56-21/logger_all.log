@@ -1,0 +1,90 @@
+[0.558s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.558s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fc773b93eb0>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=16, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fc773b93eb0>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fc773b9d460>)
+[0.684s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.684s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.684s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.684s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.684s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.684s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.684s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform'
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.693s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_python' and name 'set_transform'
+[0.693s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.693s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.693s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.693s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.693s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.706s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.706s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.708s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 22 installed packages in /home/zhang/carla-ros-bridge/install
+[0.709s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 271 installed packages in /opt/ros/foxy
+[0.710s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'set_transform' build argument 'cmake_args' from command line to 'None'
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'set_transform' build argument 'cmake_target' from command line to 'None'
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'set_transform' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'set_transform' build argument 'cmake_clean_cache' from command line to 'False'
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'set_transform' build argument 'cmake_clean_first' from command line to 'False'
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'set_transform' build argument 'cmake_force_configure' from command line to 'False'
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'set_transform' build argument 'ament_cmake_args' from command line to 'None'
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'set_transform' build argument 'catkin_cmake_args' from command line to 'None'
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'set_transform' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.629s] DEBUG:colcon.colcon_core.verb:Building package 'set_transform' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform', 'merge_install': False, 'path': '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform', 'symlink_install': False, 'test_result_base': None}
+[1.630s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.632s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.632s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform' with build type 'ament_python'
+[1.632s] Level 1:colcon.colcon_core.shell:create_environment_hook('set_transform', 'ament_prefix_path')
+[1.635s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.635s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/share/set_transform/hook/ament_prefix_path.ps1'
+[1.636s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/share/set_transform/hook/ament_prefix_path.dsv'
+[1.636s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/share/set_transform/hook/ament_prefix_path.sh'
+[1.637s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.637s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.797s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform'
+[1.798s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.798s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.480s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform': PYTHONPATH=/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/prefix_override:/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/set_transform build --build-base /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/build install --record /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/install.log --install-scripts $base/lib/set_transform --single-version-externally-managed
+[3.264s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform' returned '0': PYTHONPATH=/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/prefix_override:/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/set_transform build --build-base /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/build install --record /home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/build/set_transform/install.log --install-scripts $base/lib/set_transform --single-version-externally-managed
+[3.268s] Level 1:colcon.colcon_core.environment:checking '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform' for CMake module files
+[3.268s] Level 1:colcon.colcon_core.environment:checking '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform' for CMake config files
+[3.269s] Level 1:colcon.colcon_core.environment:checking '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib'
+[3.269s] Level 1:colcon.colcon_core.environment:checking '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/bin'
+[3.269s] Level 1:colcon.colcon_core.environment:checking '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib/pkgconfig/set_transform.pc'
+[3.269s] Level 1:colcon.colcon_core.environment:checking '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/lib/python3.8/site-packages'
+[3.269s] Level 1:colcon.colcon_core.shell:create_environment_hook('set_transform', 'pythonpath')
+[3.270s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/share/set_transform/hook/pythonpath.ps1'
+[3.270s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/share/set_transform/hook/pythonpath.dsv'
+[3.271s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/share/set_transform/hook/pythonpath.sh'
+[3.271s] Level 1:colcon.colcon_core.environment:checking '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/bin'
+[3.271s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(set_transform)
+[3.272s] INFO:colcon.colcon_core.shell:Creating package script '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/share/set_transform/package.ps1'
+[3.272s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/share/set_transform/package.dsv'
+[3.273s] INFO:colcon.colcon_core.shell:Creating package script '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/share/set_transform/package.sh'
+[3.273s] INFO:colcon.colcon_core.shell:Creating package script '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/share/set_transform/package.bash'
+[3.274s] INFO:colcon.colcon_core.shell:Creating package script '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/share/set_transform/package.zsh'
+[3.371s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/set_transform/share/colcon-core/packages/set_transform)
+[3.372s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.372s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.373s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.373s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.380s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.380s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.380s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[4.660s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[4.664s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/local_setup.ps1'
+[4.665s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/_local_setup_util_ps1.py'
+[4.666s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/setup.ps1'
+[4.668s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/local_setup.sh'
+[4.668s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/_local_setup_util_sh.py'
+[4.668s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/setup.sh'
+[4.669s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/local_setup.bash'
+[4.670s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/setup.bash'
+[4.671s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/local_setup.zsh'
+[4.671s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/zhang/carla-ros-bridge/src/ros-bridge/set_transform/install/setup.zsh'

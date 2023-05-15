@@ -1,0 +1,29 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/waypoints_types/include/**",
+        "/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/kvaser_msg_interfaces/include/**",
+        "/home/cec20/ros2-force-feedback/install/ros_g29_force_feedback/include/**",
+        "/home/cec20/carla-ros-bridge/install/carla_waypoint_types/include/**",
+        "/home/cec20/carla-ros-bridge/install/carla_ros_scenario_runner_types/include/**",
+        "/home/cec20/carla-ros-bridge/install/carla_ackermann_msgs/include/**",
+        "/home/cec20/carla-ros-bridge/install/carla_msgs/include/**",
+        "/opt/ros/foxy/include/**",
+        "/home/cec20/Yangjiaxin/my-carla-ros-bridge/src/kvaser_msg_interfaces/include/**",
+        "/home/cec20/Yangjiaxin/my-carla-ros-bridge/src/waypoints_types/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

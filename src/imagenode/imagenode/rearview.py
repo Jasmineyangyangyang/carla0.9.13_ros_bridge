@@ -16,9 +16,9 @@ class ImageNode(Node):
     def __init__(self,name):
         super().__init__(name)
         # 2.创建并初始化发布者成员属性pubnovel
-        # self.frontimage= self.create_subscription(Image,"carla/ego_vehicle/rgb_front/image",self.imageshow1,60)
-        self.leftimage = self.create_subscription(Image,"carla/ego_vehicle/left_camera/image",self.imageshow2,60)
-        self.rightimage = self.create_subscription(Image,"carla/ego_vehicle/right_camera/image",self.imageshow3,60)
+        # self.frontimage= self.create_subscription(Image,"/carla/ego_vehicle/front_camera/image",self.imageshow1,60)
+        self.leftimage = self.create_subscription(Image,"/carla/ego_vehicle/left_camera/image",self.imageshow2,60)
+        self.rightimage = self.create_subscription(Image,"/carla/ego_vehicle/right_camera/image",self.imageshow3,60)
 
     def imageshow1(self,img_msg):
         img1 = cv_bridge.imgmsg_to_cv2(img_msg)         
@@ -30,13 +30,13 @@ class ImageNode(Node):
     def imageshow2(self,img_msg):
         img2 = cv_bridge.imgmsg_to_cv2(img_msg)         
         cv2.imshow('rear_view_L', img2)
-        cv2.moveWindow("rear_view_L",250,700)
+        cv2.moveWindow("rear_view_L",0,700)
         cv2.waitKey(1)
 
     def imageshow3(self,img_msg):
         img3 = cv_bridge.imgmsg_to_cv2(img_msg)         
         cv2.imshow('rear_view_R', img3)
-        cv2.moveWindow("rear_view_R",2500,700)
+        cv2.moveWindow("rear_view_R",3200,700)
         cv2.waitKey(1)
     
 

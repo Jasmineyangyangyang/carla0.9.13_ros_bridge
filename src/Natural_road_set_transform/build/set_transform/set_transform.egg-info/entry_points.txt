@@ -1,0 +1,5 @@
+[console_scripts]
+test = set_transform.test1:main
+transform_autoset = set_transform.auto_set:main
+transform_manualset = set_transform.manual_set:main
+

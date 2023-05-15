@@ -26,7 +26,8 @@ setup(
         'write_to_kvaser = kvaser_parser_ros.write_to_kvaser:main',
         'read_from_kvaser = kvaser_parser_ros.read_from_kvaser:main',
         'kvaser_ros = kvaser_parser_ros.kvaser_ros:main',
-        'read_from_kvaser_queue  = kvaser_parser_ros.read_from_kvaser_queue:main'
+        'read_from_kvaser_queue  = kvaser_parser_ros.read_from_kvaser_queue:main',
+        'read_from_kvaser_adjacent  = kvaser_parser_ros.read_from_kvaser_adjacent:main'
         ],
     },
 )

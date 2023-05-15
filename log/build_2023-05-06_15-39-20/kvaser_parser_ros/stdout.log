@@ -1,0 +1,26 @@
+running egg_info
+writing ../../build/kvaser_parser_ros/kvaser_parser_ros.egg-info/PKG-INFO
+writing dependency_links to ../../build/kvaser_parser_ros/kvaser_parser_ros.egg-info/dependency_links.txt
+writing entry points to ../../build/kvaser_parser_ros/kvaser_parser_ros.egg-info/entry_points.txt
+writing requirements to ../../build/kvaser_parser_ros/kvaser_parser_ros.egg-info/requires.txt
+writing top-level names to ../../build/kvaser_parser_ros/kvaser_parser_ros.egg-info/top_level.txt
+reading manifest file '../../build/kvaser_parser_ros/kvaser_parser_ros.egg-info/SOURCES.txt'
+writing manifest file '../../build/kvaser_parser_ros/kvaser_parser_ros.egg-info/SOURCES.txt'
+running build
+running build_py
+copying kvaser_parser_ros/read_from_kvaser_vx.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/kvaser_parser_ros/build/lib/kvaser_parser_ros
+running install
+running install_lib
+copying /home/cec20/Yangjiaxin/my-carla-ros-bridge/build/kvaser_parser_ros/build/lib/kvaser_parser_ros/read_from_kvaser_vx.py -> /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/kvaser_parser_ros/lib/python3.8/site-packages/kvaser_parser_ros
+byte-compiling /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/kvaser_parser_ros/lib/python3.8/site-packages/kvaser_parser_ros/read_from_kvaser_vx.py to read_from_kvaser_vx.cpython-38.pyc
+running install_data
+running install_egg_info
+removing '/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/kvaser_parser_ros/lib/python3.8/site-packages/kvaser_parser_ros-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../build/kvaser_parser_ros/kvaser_parser_ros.egg-info to /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/kvaser_parser_ros/lib/python3.8/site-packages/kvaser_parser_ros-0.0.0-py3.8.egg-info
+running install_scripts
+Installing kvaser_ros script to /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/kvaser_parser_ros/lib/kvaser_parser_ros
+Installing read_from_kvaser script to /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/kvaser_parser_ros/lib/kvaser_parser_ros
+Installing read_from_kvaser_queue script to /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/kvaser_parser_ros/lib/kvaser_parser_ros
+Installing read_from_kvaser_vx script to /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/kvaser_parser_ros/lib/kvaser_parser_ros
+Installing write_to_kvaser script to /home/cec20/Yangjiaxin/my-carla-ros-bridge/install/kvaser_parser_ros/lib/kvaser_parser_ros
+writing list of installed files to '/home/cec20/Yangjiaxin/my-carla-ros-bridge/build/kvaser_parser_ros/install.log'

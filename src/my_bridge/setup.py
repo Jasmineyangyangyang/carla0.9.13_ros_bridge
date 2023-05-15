@@ -25,6 +25,7 @@ setup(
         'console_scripts': [
         'bridge_wayserver = my_bridge.bridge_wayserver:main',
         'bridge_waypublisher = my_bridge.bridge_waypublisher:main',
+        'bridge_wayserver_adjacent = my_bridge.bridge_wayserver_adjacent:main',
         ],
     },
 )
