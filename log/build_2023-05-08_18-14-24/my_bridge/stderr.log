@@ -1,5 +1,0 @@
-  File "/home/cec20/Yangjiaxin/my-carla-ros-bridge/install/my_bridge/lib/python3.8/site-packages/my_bridge/bridge_wayserver_adjacent copy 2.py", line 194
-    self.ego_transform_subscription = self..Subscriber('/camera/rgb/image_raw', Image)
-                                           ^
-SyntaxError: invalid syntax
-

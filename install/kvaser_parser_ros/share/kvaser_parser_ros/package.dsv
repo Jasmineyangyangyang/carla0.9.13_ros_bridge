@@ -1,6 +1,0 @@
-source;share/kvaser_parser_ros/hook/pythonpath.ps1
-source;share/kvaser_parser_ros/hook/pythonpath.dsv
-source;share/kvaser_parser_ros/hook/pythonpath.sh
-source;share/kvaser_parser_ros/hook/ament_prefix_path.ps1
-source;share/kvaser_parser_ros/hook/ament_prefix_path.dsv
-source;share/kvaser_parser_ros/hook/ament_prefix_path.sh

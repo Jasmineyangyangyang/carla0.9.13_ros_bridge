@@ -1,3 +1,0 @@
-[console_scripts]
-traject_plan_control = traject_plan_control.waypoints_client:main
-
